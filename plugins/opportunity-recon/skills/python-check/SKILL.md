@@ -1,18 +1,13 @@
 ---
-description: Throwaway plumbing test. Prints the Python version and where the plugin keeps files. Use only when asked to run the Opportunity Recon python check.
+description: Throwaway plumbing test. Prints the Python version and checks which folders keep files between runs. Use only when asked to run the Opportunity Recon python check.
 ---
 
 # Python check
 
-Run this with the Bash tool and show the output as-is:
+Run this script and show its output as-is:
 
 ```bash
-python3 -c "import sys, platform; print(sys.version); print(platform.machine())"
+python3 ${CLAUDE_SKILL_DIR}/scripts/probe.py
 ```
 
-Then print these two paths exactly as Claude Code resolved them:
-
-- Plugin folder: ${CLAUDE_PLUGIN_ROOT}
-- Plugin data folder: ${CLAUDE_PLUGIN_DATA}
-
-Finally, create a file named `check.txt` in the plugin data folder containing the text `ok`, read it back, and say whether it worked.
+If that path doesn't exist, run `python3 scripts/probe.py` from this skill's folder instead.
