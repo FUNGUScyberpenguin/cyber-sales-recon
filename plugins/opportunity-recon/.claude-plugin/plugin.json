@@ -1,0 +1,9 @@
+{
+  "name": "opportunity-recon",
+  "displayName": "Opportunity Recon",
+  "version": "0.1.0",
+  "description": "Research a prospect from public data and turn it into briefs, decks, and outreach.",
+  "author": { "name": "FUNGUScyberpenguin" },
+  "repository": "https://github.com/FUNGUScyberpenguin/cyber-sales-recon",
+  "license": "MIT"
+}

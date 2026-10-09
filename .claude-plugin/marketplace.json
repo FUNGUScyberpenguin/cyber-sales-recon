@@ -1,0 +1,14 @@
+{
+  "name": "cyber-sales-recon",
+  "description": "Public-data research for people who sell cybersecurity services.",
+  "owner": {
+    "name": "FUNGUScyberpenguin"
+  },
+  "plugins": [
+    {
+      "name": "opportunity-recon",
+      "source": "./plugins/opportunity-recon",
+      "description": "Research a prospect from public data and turn it into briefs, decks, and outreach."
+    }
+  ]
+}
