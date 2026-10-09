@@ -1,0 +1,19 @@
+{
+ "search": [
+  {
+   "id": "Q111",
+   "label": "Acme Corporation",
+   "description": "American manufacturer"
+  },
+  {
+   "id": "Q222",
+   "label": "Acme Corp",
+   "description": "fictional company"
+  },
+  {
+   "id": "Q333",
+   "label": "Acme Studios",
+   "description": "unrelated"
+  }
+ ]
+}

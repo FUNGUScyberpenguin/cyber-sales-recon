@@ -1,0 +1,15 @@
+{
+ "cik": "1234567",
+ "name": "ACME CORP",
+ "tickers": [
+  "ACME"
+ ],
+ "sicDescription": "Miscellaneous Manufacturing",
+ "website": "https://www.acme.com",
+ "addresses": {
+  "business": {
+   "city": "SPRINGFIELD",
+   "stateOrCountry": "IL"
+  }
+ }
+}

@@ -35,8 +35,9 @@ class ScriptedDns(DnsResolver):
         return DnsResult(Tri.FOUND, tuple(value), ttl=300)
 
 
-def response(status=200, body=b"", error=None):
-    return Fetch(url="", status=None if error else status, body=body, error=error)
+def response(status=200, body=b"", error=None, headers=None, **extra):
+    return Fetch(url=extra.pop("url", ""), final_url=extra.pop("final_url", ""), status=None if error else status,
+                 body=body, error=error, headers=list(headers or []), **extra)
 
 
 class FakeHttp:

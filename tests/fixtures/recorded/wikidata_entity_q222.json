@@ -1,0 +1,39 @@
+{
+ "entities": {
+  "Q222": {
+   "claims": {
+    "P856": [
+     {
+      "mainsnak": {
+       "datavalue": {
+        "value": "https://acme-fan-wiki.net/"
+       }
+      }
+     }
+    ],
+    "P571": [
+     {
+      "mainsnak": {
+       "datavalue": {
+        "value": {
+         "time": "+1998-09-04T00:00:00Z"
+        }
+       }
+      }
+     }
+    ],
+    "P1128": [
+     {
+      "mainsnak": {
+       "datavalue": {
+        "value": {
+         "amount": "+4200"
+        }
+       }
+      }
+     }
+    ]
+   }
+  }
+ }
+}

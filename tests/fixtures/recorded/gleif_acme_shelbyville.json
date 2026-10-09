@@ -1,0 +1,19 @@
+{
+ "data": [
+  {
+   "attributes": {
+    "lei": "BBBB0000000000000000",
+    "entity": {
+     "legalName": {
+      "name": "Acme Corporation"
+     },
+     "status": "ACTIVE",
+     "headquartersAddress": {
+      "city": "Shelbyville",
+      "country": "US"
+     }
+    }
+   }
+  }
+ ]
+}
