@@ -1,0 +1,34 @@
+{
+ "data": [
+  {
+   "attributes": {
+    "lei": "5493001KJTIIGC8Y1R12",
+    "entity": {
+     "legalName": {
+      "name": "Acme Corporation"
+     },
+     "status": "ACTIVE",
+     "headquartersAddress": {
+      "city": "Springfield",
+      "country": "US"
+     }
+    }
+   }
+  },
+  {
+   "attributes": {
+    "lei": "AAAA0000000000000000",
+    "entity": {
+     "legalName": {
+      "name": "Acme Corporation Holdings"
+     },
+     "status": "ACTIVE",
+     "headquartersAddress": {
+      "city": "Springfield",
+      "country": "US"
+     }
+    }
+   }
+  }
+ ]
+}

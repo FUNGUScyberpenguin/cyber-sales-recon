@@ -1,0 +1,29 @@
+{
+ "resultsPerPage": 2,
+ "startIndex": 2,
+ "totalResults": 3,
+ "vulnerabilities": [
+  {
+   "cve": {
+    "id": "CVE-2021-41773",
+    "published": "2021-10-05T09:15:00.000",
+    "descriptions": [
+     {
+      "lang": "en",
+      "value": "CVE-2021-41773 description"
+     }
+    ],
+    "metrics": {
+     "cvssMetricV31": [
+      {
+       "cvssData": {
+        "baseScore": 9.8,
+        "baseSeverity": "CRITICAL"
+       }
+      }
+     ]
+    }
+   }
+  }
+ ]
+}

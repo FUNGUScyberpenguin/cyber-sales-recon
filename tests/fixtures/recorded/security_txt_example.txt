@@ -1,0 +1,6 @@
+# Security contact for Example Corp
+Contact: mailto:security@example.com
+Contact: https://example.com/report
+Expires: 2099-12-31T23:59:00.000Z
+Policy: https://example.com/security-policy
+Preferred-Languages: en

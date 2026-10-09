@@ -16,11 +16,12 @@ class Context:
     dns: DnsResolver
     http: HttpClient
     evidence: list[Evidence] = field(default_factory=list)  # evidence from earlier stages
+    company_hint: str = ""  # a company name the user gave; one of the trusted names
 
     @classmethod
-    def create(cls, domain: str) -> "Context":
+    def create(cls, domain: str, company_hint: str = "") -> "Context":
         resolver = DnsResolver()
-        return cls(domain, resolver, HttpClient(AddressGuard(resolver)))
+        return cls(domain, resolver, HttpClient(AddressGuard(resolver)), company_hint=company_hint)
 
 
 @dataclass
