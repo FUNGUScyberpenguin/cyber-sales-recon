@@ -1,0 +1,7 @@
+[["original"],
+ ["http://example.com/"],
+ ["https://old.example.com/login"],
+ ["http://old.example.com:80/"],
+ ["https://dev.example.com/api"],
+ ["https://example.org/elsewhere"],
+ ["https://www.example.com/"]]

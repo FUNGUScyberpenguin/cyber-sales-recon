@@ -122,8 +122,9 @@ class HttpClient:
         self.max_redirects = max_redirects
         self.max_bytes = max_bytes
 
-    def fetch(self, url: str, headers: dict[str, str] | None = None) -> Fetch:
+    def fetch(self, url: str, headers: dict[str, str] | None = None, max_bytes: int | None = None) -> Fetch:
         result = Fetch(url=url, final_url=url)
+        limit = max_bytes or self.max_bytes
         current = url
         for _ in range(self.max_redirects + 1):
             parts = urlsplit(current)
@@ -142,7 +143,7 @@ class HttpClient:
                 result.internal_addresses = verdict.non_global
                 return result
             result.internal_addresses = verdict.non_global
-            self._request_once(result, parts, host, port, verdict.addresses, headers or {})
+            self._request_once(result, parts, host, port, verdict.addresses, headers or {}, limit)
             result.final_url = current
             if result.error:
                 return result
@@ -156,7 +157,7 @@ class HttpClient:
         result.error = "too_many_redirects"
         return result
 
-    def _request_once(self, result: Fetch, parts, host, port, addresses, extra) -> None:
+    def _request_once(self, result: Fetch, parts, host, port, addresses, extra, limit) -> None:
         sock = None
         last_error = "connect_failed"
         for address in addresses:
@@ -192,9 +193,9 @@ class HttpClient:
                 response = conn.getresponse()
                 result.status = response.status
                 result.headers = response.getheaders()
-                body = response.read(self.max_bytes + 1)
-                result.truncated = len(body) > self.max_bytes
-                result.body = body[: self.max_bytes]
+                body = response.read(limit + 1)
+                result.truncated = len(body) > limit
+                result.body = body[:limit]
             except socket.timeout:
                 result.error = "timeout"
             except (OSError, http.client.HTTPException):

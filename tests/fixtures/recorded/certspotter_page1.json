@@ -1,0 +1,4 @@
+[
+ {"id":"1001","tbs_sha256":"aa","dns_names":["example.com","www.example.com"],"pubkey_sha256":"bb","not_before":"2026-08-01T00:00:00Z","not_after":"2026-10-30T00:00:00Z","issuer":{"name":"C=US, O=Let's Encrypt, CN=R11"}},
+ {"id":"1002","tbs_sha256":"cc","dns_names":["*.example.com","staging.example.com"],"pubkey_sha256":"dd","not_before":"2026-07-01T00:00:00Z","not_after":"2026-09-29T00:00:00Z","issuer":{"name":"C=US, O=Let's Encrypt, CN=R11"}}
+]
