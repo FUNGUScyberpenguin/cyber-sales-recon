@@ -1,0 +1,162 @@
+[
+ {
+  "pluginId": "10020",
+  "alert": "Missing Anti-clickjacking Header",
+  "risk": "Medium",
+  "confidence": "Medium",
+  "url": "https://www.acme-test.example/",
+  "param": "x-frame-options",
+  "evidence": "",
+  "cweid": "1021"
+ },
+ {
+  "pluginId": "10015",
+  "alert": "Re-examine Cache-control Directives",
+  "risk": "Informational",
+  "confidence": "Low",
+  "url": "https://www.acme-test.example/",
+  "param": "cache-control",
+  "evidence": "",
+  "cweid": "525"
+ },
+ {
+  "pluginId": "10038",
+  "alert": "Content Security Policy (CSP) Header Not Set",
+  "risk": "Medium",
+  "confidence": "High",
+  "url": "https://www.acme-test.example/",
+  "param": "",
+  "evidence": "",
+  "cweid": "693"
+ },
+ {
+  "pluginId": "10010",
+  "alert": "Cookie No HttpOnly Flag",
+  "risk": "Low",
+  "confidence": "Medium",
+  "url": "https://www.acme-test.example/",
+  "param": "sid",
+  "evidence": "Set-Cookie: sid",
+  "cweid": "1004"
+ },
+ {
+  "pluginId": "10010",
+  "alert": "Cookie No HttpOnly Flag",
+  "risk": "Low",
+  "confidence": "Medium",
+  "url": "https://www.acme-test.example/",
+  "param": "pref",
+  "evidence": "Set-Cookie: pref",
+  "cweid": "1004"
+ },
+ {
+  "pluginId": "10054",
+  "alert": "Cookie without SameSite Attribute",
+  "risk": "Low",
+  "confidence": "Medium",
+  "url": "https://www.acme-test.example/",
+  "param": "sid",
+  "evidence": "Set-Cookie: sid",
+  "cweid": "1275"
+ },
+ {
+  "pluginId": "10054",
+  "alert": "Cookie without SameSite Attribute",
+  "risk": "Low",
+  "confidence": "Medium",
+  "url": "https://www.acme-test.example/",
+  "param": "pref",
+  "evidence": "Set-Cookie: pref",
+  "cweid": "1275"
+ },
+ {
+  "pluginId": "10011",
+  "alert": "Cookie Without Secure Flag",
+  "risk": "Low",
+  "confidence": "Medium",
+  "url": "https://www.acme-test.example/",
+  "param": "sid",
+  "evidence": "Set-Cookie: sid",
+  "cweid": "614"
+ },
+ {
+  "pluginId": "10017",
+  "alert": "Cross-Domain JavaScript Source File Inclusion",
+  "risk": "Low",
+  "confidence": "Medium",
+  "url": "https://www.acme-test.example/",
+  "param": "http://cdn.example.net/a.js",
+  "evidence": "<script src=\"http://cdn.example.net/a.js\"></script>",
+  "cweid": "829"
+ },
+ {
+  "pluginId": "10027",
+  "alert": "Information Disclosure - Suspicious Comments",
+  "risk": "Informational",
+  "confidence": "Medium",
+  "url": "https://www.acme-test.example/",
+  "param": "",
+  "evidence": "TODO",
+  "cweid": "615"
+ },
+ {
+  "pluginId": "10040",
+  "alert": "Secure Pages Include Mixed Content (Including Scripts)",
+  "risk": "Medium",
+  "confidence": "Medium",
+  "url": "https://www.acme-test.example/",
+  "param": "",
+  "evidence": "http://cdn.example.net/a.js",
+  "cweid": "311"
+ },
+ {
+  "pluginId": "10036",
+  "alert": "Server Leaks Version Information via \"Server\" HTTP Response Header Field",
+  "risk": "Low",
+  "confidence": "High",
+  "url": "https://www.acme-test.example/",
+  "param": "",
+  "evidence": "Apache/2.4.41 (Ubuntu)",
+  "cweid": "497"
+ },
+ {
+  "pluginId": "10035",
+  "alert": "Strict-Transport-Security Header Not Set",
+  "risk": "Low",
+  "confidence": "High",
+  "url": "https://www.acme-test.example/",
+  "param": "",
+  "evidence": "",
+  "cweid": "319"
+ },
+ {
+  "pluginId": "90003",
+  "alert": "Sub Resource Integrity Attribute Missing",
+  "risk": "Medium",
+  "confidence": "High",
+  "url": "https://www.acme-test.example/",
+  "param": "",
+  "evidence": "<script src=\"http://cdn.example.net/a.js\"></script>",
+  "cweid": "345"
+ },
+ {
+  "pluginId": "10021",
+  "alert": "X-Content-Type-Options Header Missing",
+  "risk": "Low",
+  "confidence": "Medium",
+  "url": "https://www.acme-test.example/",
+  "param": "x-content-type-options",
+  "evidence": "",
+  "cweid": "693"
+ },
+ {
+  "pluginId": "10037",
+  "alert": "Server Leaks Information via \"X-Powered-By\" HTTP Response Header Field(s)",
+  "risk": "Low",
+  "confidence": "Medium",
+  "url": "https://www.acme-test.example/",
+  "param": "",
+  "evidence": "X-Powered-By: PHP/7.2.1",
+  "cweid": "497"
+ }
+]

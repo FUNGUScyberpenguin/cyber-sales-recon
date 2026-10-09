@@ -275,3 +275,11 @@ def test_wildcard_pages_with_no_title_are_not_assumed_identical():
     p = pages(run(routes, ev)[0])
     assert p["api.example.com"].data["wildcard_match"] is False and p["api.example.com"].data["live"] is True
     assert p["echo.example.com"].data["wildcard_match"] is True and p["echo.example.com"].data["live"] is False
+
+
+def test_loaded_pages_are_kept_for_passive_scanning_and_failed_loads_are_not():
+    http = FakeHttp(site("example.com") + [("https://www.example.com/", response(error="connect_failed"))])
+    ctx = make_ctx(http=http, evidence=[host_dns("example.com"), host_dns("www.example.com")])
+    PageLoader().run(ctx)
+    assert [f.final_url for f in ctx.captured] == ["https://example.com/"]
+    assert len(http.requested) == len(set(http.requested))  # keeping them cost no extra request

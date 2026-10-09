@@ -5,14 +5,17 @@ from reconbrief.pipeline import Pipeline
 from reconbrief.sources import page_sources
 from reconbrief.sources import vulns
 from reconbrief.sources.vulns import Vulnerabilities
+from reconbrief.sources.zap_posture import ZapPassive
 from tests.helpers import FakeHttp, make_ctx, recorded, response
 
 HTML = [("Content-Type", "text/html"), ("Server", "Apache/2.4.49 (Unix)")]
 
 
 def test_stages_feed_each_other_and_a_bad_source_does_not_stop_the_rest():
-    sources = [Vulnerabilities(sleep=lambda s: None) if s.name == "vulnerabilities" else s for s in page_sources()]
-    assert [s.stage for s in sources] == [3, 4, 4, 4]
+    swaps = {"vulnerabilities": Vulnerabilities(sleep=lambda s: None),
+             "zap_passive": ZapPassive(java_check=lambda: None)}  # never download or start ZAP in a test
+    sources = [swaps.get(s.name, s) for s in page_sources()]
+    assert [s.stage for s in sources] == [3, 4, 4, 4, 5]
     home = response(200, recorded("home_example.html"), headers=HTML, final_url="https://example.com/")
     trust_url = "https://example.com/trust"
     http = FakeHttp([
@@ -27,6 +30,7 @@ def test_stages_feed_each_other_and_a_bad_source_does_not_stop_the_rest():
     result = Pipeline(sources).run(make_ctx(http=http, evidence=[rdap]))
     status = {h.source: h.status for h in result.health}
     assert status["page_loader"] is Health.OK and status["trust"] is Health.OK
+    assert status["zap_passive"] is Health.SKIPPED  # no Java: the run still completes
     assert status["company"] is Health.FAILED and status["vulnerabilities"] is Health.PARTIAL
     kinds = {e.kind: e for e in result.evidence}
     assert kinds["trust_center"].state is Tri.FOUND  # stage 4 read stage 3's homepage

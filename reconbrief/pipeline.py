@@ -3,9 +3,10 @@ from __future__ import annotations
 
 from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass, field
+from pathlib import Path
 from typing import Protocol
 
-from reconbrief.http import AddressGuard, HttpClient
+from reconbrief.http import AddressGuard, Fetch, HttpClient
 from reconbrief.models import Evidence, Health, SourceHealth
 from reconbrief.resolver import DnsResolver
 
@@ -17,11 +18,14 @@ class Context:
     http: HttpClient
     evidence: list[Evidence] = field(default_factory=list)  # evidence from earlier stages
     company_hint: str = ""  # a company name the user gave; one of the trusted names
+    data_dir: Path | None = None  # where downloaded tools (OWASP ZAP) are cached between runs
+    captured: list[Fetch] = field(default_factory=list)  # pages the page loader fetched, for passive scanning
 
     @classmethod
-    def create(cls, domain: str, company_hint: str = "") -> "Context":
+    def create(cls, domain: str, company_hint: str = "", data_dir: Path | None = None) -> "Context":
         resolver = DnsResolver()
-        return cls(domain, resolver, HttpClient(AddressGuard(resolver)), company_hint=company_hint)
+        return cls(domain, resolver, HttpClient(AddressGuard(resolver)), company_hint=company_hint,
+                   data_dir=data_dir)
 
 
 @dataclass

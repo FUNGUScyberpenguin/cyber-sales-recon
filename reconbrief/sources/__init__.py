@@ -8,6 +8,7 @@ from reconbrief.sources.pages import PageLoader
 from reconbrief.sources.rdap import Rdap
 from reconbrief.sources.trust import TrustPosture
 from reconbrief.sources.vulns import Vulnerabilities
+from reconbrief.sources.zap_posture import ZapPassive
 
 
 def discovery_sources() -> list:
@@ -16,5 +17,5 @@ def discovery_sources() -> list:
 
 
 def page_sources() -> list:
-    """Run after discovery: the page loader (stage 3), then what is built on its pages (stage 4)."""
-    return [PageLoader(), TrustPosture(), CompanyProfile(), Vulnerabilities()]
+    """Run after discovery: the page loader (stage 3), what is built on its pages (stage 4), then the passive ZAP scan of those pages (stage 5)."""
+    return [PageLoader(), TrustPosture(), CompanyProfile(), Vulnerabilities(), ZapPassive()]

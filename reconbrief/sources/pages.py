@@ -194,6 +194,8 @@ class PageLoader:
             fetch, scheme = load_root(ctx, host)
             evidence = page_evidence(self.name, host, fetch, scheme, robots, note, wildcard_ref,
                                      host in wildcard_hosts)
+            if fetch.ok:
+                ctx.captured.append(fetch)  # kept so ZAP can passive-scan it without a new request
             return evidence, evidence[0].state
 
         with ThreadPoolExecutor(max_workers=WORKERS) as pool:
