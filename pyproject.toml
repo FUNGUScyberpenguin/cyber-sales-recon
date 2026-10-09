@@ -5,7 +5,10 @@ description = "Public-data recon engine for cybersecurity sales."
 readme = "README.md"
 license = "MIT"
 requires-python = ">=3.11"
-dependencies = ["typer>=0.12"]
+dependencies = [
+    "dnspython>=2.9.0",
+    "typer>=0.12",
+]
 
 [project.scripts]
 reconbrief = "reconbrief.cli:app"
