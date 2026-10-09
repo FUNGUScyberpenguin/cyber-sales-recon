@@ -1,0 +1,42 @@
+{
+ "example.com|A": [
+  "93.184.216.34"
+ ],
+ "example.com|NS": [
+  "a.iana-servers.net."
+ ],
+ "example.com|MX": [
+  "0 ."
+ ],
+ "example.com|CAA": [
+  "0 issue \"letsencrypt.org\""
+ ],
+ "example.com|TXT": [
+  "v=spf1 include:_spf.google.com ~all",
+  "google-site-verification=abc"
+ ],
+ "_dmarc.example.com|TXT": [
+  "v=DMARC1; p=none"
+ ],
+ "google._domainkey.example.com|TXT": [
+  "v=DKIM1; k=rsa; p=MIIB"
+ ],
+ "_mta-sts.example.com|TXT": [
+  "v=STSv1; id=1"
+ ],
+ "autodiscover.example.com|CNAME": [
+  "autodiscover.outlook.com."
+ ],
+ "autodiscover.outlook.com|A": [
+  "40.96.0.1"
+ ],
+ "lyncdiscover.example.com|CNAME": [
+  "webdir.online.lync.com."
+ ],
+ "webdir.online.lync.com|A": [
+  "52.112.0.1"
+ ],
+ "www.example.com|A": [
+  "93.184.216.34"
+ ]
+}

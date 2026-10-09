@@ -1,0 +1,4 @@
+{"results":[
+ {"page":{"domain":"portal.example.com"},"task":{"domain":"portal.example.com"}},
+ {"page":{"domain":"www.example.com"},"task":{"domain":"example.com"}},
+ {"page":{"domain":"cdn.other.net"},"task":{"domain":"cdn.other.net"}}],"total":3}

@@ -1,0 +1,4 @@
+{"objectClassName":"domain","ldhName":"acme.example",
+ "status":["active"],
+ "events":[{"eventAction":"registration","eventDate":"2019-03-02T00:00:00Z"}],
+ "entities":[{"roles":["registrant"],"vcardArray":["vcard",[["fn",{},"text","Pat Smith"],["org",{},"text","Acme Industrial Holdings LLC"]]]}]}
