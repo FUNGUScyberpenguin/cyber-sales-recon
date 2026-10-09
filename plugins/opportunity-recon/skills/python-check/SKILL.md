@@ -1,13 +1,14 @@
 ---
-description: Throwaway plumbing test. Prints the Python version and checks which folders keep files between runs. Use only when asked to run the Opportunity Recon python check.
+description: Throwaway plumbing test. Prints the Python version and checks where project files and saved files show up. Use only when asked to run the Opportunity Recon python check.
 ---
 
 # Python check
 
-Run this script and show its output as-is:
+Path variables are not set in every app, so find the script first:
 
 ```bash
-python3 ${CLAUDE_SKILL_DIR}/scripts/probe.py
+SCRIPT=$(find / -path "*opportunity-recon*/python-check/scripts/probe.py" 2>/dev/null | head -1)
+python3 "$SCRIPT"
 ```
 
-If that path doesn't exist, run `python3 scripts/probe.py` from this skill's folder instead.
+Show the full output as-is.
