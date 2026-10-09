@@ -1,0 +1,31 @@
+{
+ "results": [
+  {
+   "task": {
+    "time": "2026-09-01T10:00:00.000Z"
+   },
+   "page": {
+    "domain": "app.example.com",
+    "ip": "203.0.113.10"
+   }
+  },
+  {
+   "task": {
+    "time": "2026-09-05T10:00:00.000Z"
+   },
+   "page": {
+    "domain": "app.example.com",
+    "ip": "203.0.113.11"
+   }
+  },
+  {
+   "task": {
+    "time": "2026-08-01T10:00:00.000Z"
+   },
+   "page": {
+    "domain": "cdn.other.org",
+    "ip": "198.51.100.1"
+   }
+  }
+ ]
+}

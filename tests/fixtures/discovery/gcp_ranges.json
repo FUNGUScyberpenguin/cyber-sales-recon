@@ -1,0 +1,9 @@
+{
+ "prefixes": [
+  {
+   "ipv4Prefix": "34.80.0.0/15",
+   "service": "Google Cloud",
+   "scope": "asia-east1"
+  }
+ ]
+}

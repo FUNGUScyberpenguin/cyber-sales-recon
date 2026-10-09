@@ -5,6 +5,7 @@ from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass, field
 from typing import Protocol
 
+from reconbrief.api import ApiClient
 from reconbrief.http import AddressGuard, HttpClient
 from reconbrief.models import Evidence, Health, SourceHealth
 from reconbrief.resolver import DnsResolver
@@ -16,6 +17,10 @@ class Context:
     dns: DnsResolver
     http: HttpClient
     evidence: list[Evidence] = field(default_factory=list)  # evidence from earlier stages
+    api: ApiClient = field(default_factory=ApiClient)  # third-party public services only
+
+    def __post_init__(self) -> None:
+        self.api.forbid(self.domain)
 
     @classmethod
     def create(cls, domain: str) -> "Context":

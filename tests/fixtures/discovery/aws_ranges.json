@@ -1,0 +1,15 @@
+{
+ "prefixes": [
+  {
+   "ip_prefix": "3.5.140.0/22",
+   "region": "ap-northeast-2",
+   "service": "AMAZON"
+  }
+ ],
+ "ipv6_prefixes": [
+  {
+   "ipv6_prefix": "2600:1f00::/40",
+   "service": "AMAZON"
+  }
+ ]
+}

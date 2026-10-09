@@ -1,0 +1,22 @@
+{
+ "version": "1.0",
+ "services": [
+  [
+   [
+    "com",
+    "net"
+   ],
+   [
+    "https://rdap.verisign.com/com/v1/"
+   ]
+  ],
+  [
+   [
+    "org"
+   ],
+   [
+    "https://rdap.publicinterestregistry.org/rdap/"
+   ]
+  ]
+ ]
+}

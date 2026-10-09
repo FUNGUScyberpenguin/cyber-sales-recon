@@ -1,0 +1,9 @@
+{
+ "State": 4,
+ "UserState": 1,
+ "Login": "user@example.com",
+ "NameSpaceType": "Managed",
+ "DomainName": "example.com",
+ "FederationBrandName": "Example Corp",
+ "CloudInstanceName": "microsoftonline.com"
+}

@@ -1,0 +1,26 @@
+[
+ {
+  "issuer_name": "C=US, O=Let's Encrypt, CN=R11",
+  "name_value": "example.com\nwww.example.com",
+  "not_before": "2026-01-10T00:00:00",
+  "not_after": "2026-04-10T00:00:00"
+ },
+ {
+  "issuer_name": "C=US, O=Let's Encrypt, CN=R11",
+  "name_value": "*.example.com\nexample.com",
+  "not_before": "2026-04-01T00:00:00",
+  "not_after": "2026-07-01T00:00:00"
+ },
+ {
+  "issuer_name": "C=US, O=DigiCert Inc, CN=DigiCert TLS RSA SHA256 2020 CA1",
+  "name_value": "staging.example.com",
+  "not_before": "2026-02-01T00:00:00",
+  "not_after": "2027-02-01T00:00:00"
+ },
+ {
+  "issuer_name": "C=US, O=DigiCert Inc",
+  "name_value": "vpn.example.com\nUPPER.Example.com\nother-company.net\nnotexample.com",
+  "not_before": "2025-11-01T00:00:00",
+  "not_after": "2026-11-01T00:00:00"
+ }
+]

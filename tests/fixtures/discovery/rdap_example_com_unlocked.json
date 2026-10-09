@@ -1,0 +1,37 @@
+{
+ "objectClassName": "domain",
+ "ldhName": "EXAMPLE.COM",
+ "status": [
+  "active"
+ ],
+ "events": [
+  {
+   "eventAction": "registration",
+   "eventDate": "2010-01-01T00:00:00Z"
+  }
+ ],
+ "entities": [
+  {
+   "roles": [
+    "registrant"
+   ],
+   "vcardArray": [
+    "vcard",
+    [
+     [
+      "fn",
+      {},
+      "text",
+      "Pat Smith"
+     ],
+     [
+      "org",
+      {},
+      "text",
+      "Example Holdings LLC"
+     ]
+    ]
+   ]
+  }
+ ]
+}

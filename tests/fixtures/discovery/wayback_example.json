@@ -1,0 +1,20 @@
+[
+ [
+  "original"
+ ],
+ [
+  "http://example.com/"
+ ],
+ [
+  "https://www.example.com/about"
+ ],
+ [
+  "https://www.example.com/jobs"
+ ],
+ [
+  "http://old.example.com:8080/login"
+ ],
+ [
+  "https://example.com.evil.net/x"
+ ]
+]

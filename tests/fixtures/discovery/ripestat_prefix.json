@@ -1,0 +1,12 @@
+{
+ "data": {
+  "resource": "3.5.140.0/22",
+  "announced": true,
+  "asns": [
+   {
+    "asn": 16509,
+    "holder": "AMAZON-02"
+   }
+  ]
+ }
+}

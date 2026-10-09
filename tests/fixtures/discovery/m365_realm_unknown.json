@@ -1,0 +1,8 @@
+{
+ "State": 1,
+ "UserState": 0,
+ "Login": "user@example.com",
+ "NameSpaceType": "Unknown",
+ "DomainName": "example.com",
+ "CloudInstanceName": "microsoftonline.com"
+}

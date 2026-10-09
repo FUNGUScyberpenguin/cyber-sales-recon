@@ -1,6 +1,7 @@
 """Data models. Evidence is what a source saw; a finding is a rule's reading of evidence."""
 from __future__ import annotations
 
+import hashlib
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from enum import Enum
@@ -39,6 +40,12 @@ class Tier(str, Enum):
 
 def now_iso() -> str:
     return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+
+def evidence_id(source: str, kind: str, subject: str) -> str:
+    """Stable id: the same observation gets the same id on every run."""
+    digest = hashlib.sha1(f"{source}|{kind}|{subject}".encode()).hexdigest()
+    return f"E-{digest[:10]}"
 
 
 @dataclass(frozen=True)
