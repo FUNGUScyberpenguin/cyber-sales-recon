@@ -1,4 +1,4 @@
-"""Build the engine wheel into the plugin's vendor/ folder.
+"""Build the engine wheel into the recon skill's vendor/ folder.
 
 Run from anywhere:  python scripts/build_wheel.py
 Rerun whenever anything under reconbrief/ changes. A test fails if the wheel is stale.
@@ -10,7 +10,7 @@ import tempfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-VENDOR = ROOT / "plugins" / "opportunity-recon" / "vendor"
+VENDOR = ROOT / "plugins" / "opportunity-recon" / "skills" / "recon" / "vendor"
 
 
 def main() -> int:
