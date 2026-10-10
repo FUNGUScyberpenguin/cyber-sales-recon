@@ -5,7 +5,7 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-VENDOR = ROOT / "plugins" / "opportunity-recon" / "vendor"
+VENDOR = ROOT / "plugins" / "opportunity-recon" / "skills" / "recon" / "vendor"
 SOURCE = ROOT / "reconbrief"
 
 
@@ -40,6 +40,6 @@ def test_vendored_wheel_metadata_matches_pyproject():
 
 
 def test_install_script_installs_by_file_path_only():
-    text = (ROOT / "plugins" / "opportunity-recon" / "scripts" / "install_engine.py").read_text()
+    text = (ROOT / "plugins" / "opportunity-recon" / "skills" / "recon" / "scripts" / "install_engine.py").read_text()
     assert 'str(wheels[0])' in text
     assert "install reconbrief" not in text and '"reconbrief"' not in text
