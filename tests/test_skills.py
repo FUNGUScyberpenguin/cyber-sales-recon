@@ -131,13 +131,16 @@ def test_the_backup_hides_lens_names_and_recon_can_map_without_them():
     assert "backup" in RECON and "silently" in RECON
 
 
-def test_readme_lists_every_core_host():
+def test_blocked_runs_get_a_note_for_it_from_claude_not_a_fixed_list_in_the_readme():
     from pathlib import Path
-    from reconbrief.preflight import CORE_HOSTS
 
     readme = (Path(__file__).resolve().parents[1] / "README.md").read_text()
-    missing = [h for h in CORE_HOSTS if h not in readme]
-    assert not missing, f"README is missing core hosts: {missing}"
+    assert "note for my IT team" in readme
+    assert "crt.sh" not in readme and "rdap.org" not in readme
+    low = RECON.lower()
+    assert "note they can send to their it team" in low
+    assert "only the hosts the check reported" in low
+    assert "organization's claude settings" in low and "office network" in low
 
 
 def test_a_plain_meeting_request_reaches_recon_and_every_skill_keeps_internals_out_of_replies():

@@ -48,7 +48,14 @@ Leave out offerings with an empty category list. If none remain, skip `--profile
 reconbrief preflight
 ```
 
-If it exits with 3, show which hosts are blocked or not reachable, say the network stops the run, and stop. Do not try to work around it.
+If it exits with 3, the network stops the run. Do not try to work around it. Tell the user in one plain sentence that research is blocked and which hosts are blocked, then write a short note they can send to their IT team:
+
+- Say what you can see about where you are running: a Claude workspace sandbox with a limited network allowlist, or the user's own computer on their office network. If you cannot tell, say so.
+- Name only the hosts the check reported as blocked or not reachable, as a plain list, and say the need is HTTPS (port 443) to them.
+- If the setting is the workspace's network access, say an admin changes it in the organization's Claude settings. If it is the office network, say the firewall or proxy needs to allow those hosts.
+- Add that a 403, a 407, or a proxy page counts as blocked, and that the check reruns on the next request.
+
+Offer the note as text the user can copy. Then stop.
 
 ## 6. Run the engine
 
