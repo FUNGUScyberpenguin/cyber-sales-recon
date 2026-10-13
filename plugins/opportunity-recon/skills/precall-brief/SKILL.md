@@ -1,9 +1,11 @@
 ---
 name: precall-brief
-description: Write a one-page pre-call brief for a prospect. Findings in plain language plus the recommended offering from the user's own list. Use when the user asks for a brief, call prep, or a summary of what the research found.
+description: Write a one-page pre-call brief for a prospect. Findings in plain language plus the recommended offering from the user's own list. Use when the user asks for a written one-page brief, a call prep document, or a summary of what the research found. A plain request to get ready for a call starts with the recon skill, which then offers this brief.
 ---
 
 # Pre-call brief
+
+Never show commands, file paths, tool names, or error traces in replies. Say the result in plain words.
 
 ## Before you start
 

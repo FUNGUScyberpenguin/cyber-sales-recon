@@ -5,6 +5,8 @@ description: Find why-now signals for a prospect from the user's connected tools
 
 # Buying context
 
+Never show commands, file paths, tool names, or error traces in replies. Say the result in plain words.
+
 ## Before you start
 
 1. Search memory for "Opportunity Recon firm profile" (project memory in a project, general memory otherwise). If it is missing, run the setup skill first, then continue this request. Do not ask the user to repeat it.

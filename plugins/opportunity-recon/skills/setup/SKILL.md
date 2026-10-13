@@ -5,6 +5,8 @@ description: One-time setup for Opportunity Recon. Reads the user's firm website
 
 # Set up Opportunity Recon
 
+Never show commands, file paths, tool names, or error traces in replies. Say the result in plain words.
+
 The profile tells every other skill who the user sells for and what they sell. It never goes in the repo and never leaves the user's own Claude. Claude does the background reading. The user only confirms.
 
 ## 1. Look for an existing profile

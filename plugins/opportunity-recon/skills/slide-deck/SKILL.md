@@ -5,6 +5,8 @@ description: Build a slide deck (.pptx) for a prospect from the research, on the
 
 # Slide deck
 
+Never show commands, file paths, tool names, or error traces in replies. Say the result in plain words.
+
 ## Before you start
 
 1. Search memory for "Opportunity Recon firm profile" (project memory in a project, general memory otherwise). If it is missing, run the setup skill first, then continue this request. Do not ask the user to repeat it.
@@ -18,7 +20,7 @@ If the user attached a .pptx in this chat, use it as the template. If not, build
 
 ## Write the outline
 
-Write `outline.json` in the run's folder. Claude writes the outline. The engine builds the file.
+Write `outline.json` in the run's folder. This is working detail: tell the user only that the deck is being built.
 
 ```json
 {"title": "Title text", "subtitle": "Subtitle text",

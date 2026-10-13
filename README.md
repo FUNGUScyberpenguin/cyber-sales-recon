@@ -12,12 +12,7 @@ In the Claude app:
 2. Add the marketplace `FUNGUScyberpenguin/cyber-sales-recon`.
 3. Install `opportunity-recon`.
 
-In Claude Code, run:
-
-```
-/plugin marketplace add FUNGUScyberpenguin/cyber-sales-recon
-/plugin install opportunity-recon@cyber-sales-recon
-```
+Best results come from using it inside a Claude Project, so your firm profile and past requests stay with your work.
 
 ## Set up (once)
 
@@ -27,9 +22,9 @@ Setup also prints a block of text. Paste it into your Project instructions as a 
 
 ## Research a prospect
 
-Say "research acme.com" or type `/recon acme.com`. Add the company name if the domain is a surprise ("research acme.com, Acme Holdings").
+Just talk to Claude the way you would to a colleague: "I'm meeting with acme.com and I need to be ready for the call", or "research Acme, their site is acme.com". You don't need special commands. If you give only a company name, Claude asks for the website.
 
-Claude installs the research engine, checks the network, runs, and shows a short snapshot: counts, the findings that matter most, the offering from your list that fits best, and any source it could not check. A source that failed is shown as "not checked". It never turns into a finding.
+Claude researches the company and shows a short snapshot: counts, the findings that matter most, the offering from your list that fits best, and any source it could not check. A source that failed is shown as "not checked". It never turns into a finding. Then it suggests next steps based on what it found and what you've asked for before. You pick, or ask your own question.
 
 Nothing is stored between chats. Each run lives only in the chat where you made it. In a new chat, ask for the research again.
 
@@ -40,7 +35,7 @@ After the snapshot, ask for any of these. If the chat has no run yet, Claude run
 - **Pre-call brief.** "Write a pre-call brief." One page of findings in plain language and the offering that fits.
 - **Slide deck.** "Make a deck." Attach your brand .pptx in the chat if you want it on your template. It isn't stored.
 - **Outbound drafts.** "Draft an email and a LinkedIn message." Short options grounded in what the run found.
-- **Technical detail.** "Give me the technical detail." Hosts, services, certificates, and passive web-hygiene flags with evidence, for sales engineers.
+- **Technical detail.** "Give me the technical detail." A readable summary of what the research saw on the company's websites and servers, with the evidence, for sales engineers.
 - **Scope and proposal outline.** "Size this and outline a proposal." Sizing from the run's counts, built on your offerings and pricing basis.
 - **Buying context.** "Why now?" Signals from your connected tools and web search, each with a named, dated source.
 
@@ -48,7 +43,7 @@ Every claim about a prospect traces to a finding or to a named, dated source. Wh
 
 ## If your network blocks a run
 
-Before each run, Claude checks that it can reach the public sources. If any are blocked, it names them and stops. Ask your IT team to allow HTTPS (port 443) to all of these hosts:
+This section is for your IT team. Before each run, Claude checks that it can reach the public sources. If any are blocked, it names them and stops. Ask your IT team to allow HTTPS (port 443) to all of these hosts:
 
 ```
 rdap.org

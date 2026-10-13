@@ -138,3 +138,19 @@ def test_readme_lists_every_core_host():
     readme = (Path(__file__).resolve().parents[1] / "README.md").read_text()
     missing = [h for h in CORE_HOSTS if h not in readme]
     assert not missing, f"README is missing core hosts: {missing}"
+
+
+def test_a_plain_meeting_request_reaches_recon_and_every_skill_keeps_internals_out_of_replies():
+    from pathlib import Path
+
+    root = Path(__file__).resolve().parents[1]
+    desc = frontmatter(RECON)["description"].lower()
+    for phrase in ("meeting with", "ready for", "call"):
+        assert phrase in desc
+    readme = (root / "README.md").read_text().lower()
+    assert "/recon" not in readme and "/plugin" not in readme
+    assert "offer" in RECON.lower() and "asked for before" in RECON.lower()
+    skills = PLUGIN / "skills"
+    for d in skills.iterdir():
+        if d.name != "python-check":
+            assert "never show commands, file paths, tool names, or error traces" in (d / "SKILL.md").read_text().lower(), d.name
