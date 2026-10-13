@@ -58,15 +58,25 @@ A Project is where Claude keeps your firm profile, so you only set up once.
 
 ### Part 3: Set it up
 
-**10. Start setup.** Click the box that says "New session" and type: *Set up Opportunity Recon.* Claude asks for your firm's website and a couple of quick questions, then drafts your profile. Fix anything that's off, then say yes.
+**10. Start setup.** Click the box that says "New session" and type:
 
-<img src="assets/install/10-project-page.png" alt="The project page with the New session box circled" width="100%">
+```
+Set up Opportunity Recon
+```
+
+Claude asks for your firm's website and a couple of quick questions, then drafts your profile. Fix anything that's off, then say yes.
+
+<img src="assets/install/10-project-page.png" alt="The New session box with Set up Opportunity Recon typed in it" width="100%">
 
 **11. Save the backup.** When setup finishes, Claude prints a block of text. Click **Add** next to **Instructions** on the right and paste it there. If Claude ever forgets your profile, this brings it back.
 
 <img src="assets/install/11-instructions.png" alt="The project page with Add next to Instructions circled" width="100%">
 
-**12. Ask for your first call.** Type who you're meeting, for example: *I'm meeting with acme.com and I need to be ready for the call.*
+**12. Ask for your first call.** Type who you're meeting, for example:
+
+```
+I'm meeting with acme.com and I need to be ready for the call.
+```
 
 ## Then just ask
 
