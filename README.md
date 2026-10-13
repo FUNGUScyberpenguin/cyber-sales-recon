@@ -1,49 +1,43 @@
-# Opportunity Recon
+<p align="center"><img src="assets/banner.svg" alt="Opportunity Recon: walk into every call knowing the company" width="100%"></p>
 
-A Claude plugin for people who sell cybersecurity services. Give it a prospect's domain and it researches the company from public data, then helps you turn the results into a brief, a deck, outreach, and a scope outline.
+Tell Claude who you're meeting. It researches the company from public information and gets you ready.
 
-It uses public data only.
+<img src="assets/steps.svg" alt="Install, set up once, just ask" width="100%">
 
 ## Install
 
-In the Claude app:
-
-1. Open Settings, then Plugins.
+1. In the Claude app, open **Settings**, then **Plugins**.
 2. Add the marketplace `FUNGUScyberpenguin/cyber-sales-recon`.
-3. Install `opportunity-recon`.
+3. Install **opportunity-recon**.
 
-Best results come from using it inside a Claude Project, so your firm profile and past requests stay with your work.
+Use it inside a Claude Project. Your firm profile and your habits stay with your work there.
 
-## Set up (once)
+## Set up once
 
-Your first request starts setup on its own. You can also say "set up Opportunity Recon". It asks for your firm's website and drafts your firm profile from it: firm name, what you sell, how you scope or price, and what sets you apart. You confirm or fix the draft, and it saves the profile to Claude memory.
+Your first request starts setup. Give Claude your firm's website. It drafts your profile, you fix anything that's off, and it remembers. Paste the backup text it prints into your Project instructions.
 
-Setup also prints a block of text. Paste it into your Project instructions as a backup. To change your profile later, run setup again.
+## Then just ask
 
-## Research a prospect
+Talk the way you would to a coworker. Say who you're meeting.
 
-Just talk to Claude the way you would to a colleague: "I'm meeting with acme.com and I need to be ready for the call", or "research Acme, their site is acme.com". You don't need special commands. If you give only a company name, Claude asks for the website.
+<img src="assets/chat.svg" alt="Example chat: a salesperson asks to be ready for a call with acme.com and gets a short snapshot with next steps" width="100%">
 
-Claude researches the company and shows a short snapshot: counts, the findings that matter most, the offering from your list that fits best, and any source it could not check. A source that failed is shown as "not checked". It never turns into a finding. Then it suggests next steps based on what it found and what you've asked for before. You pick, or ask your own question.
+You don't need commands. If you only know the company's name, Claude asks for its website.
 
-Nothing is stored between chats. Each run lives only in the chat where you made it. In a new chat, ask for the research again.
+## What you can ask for
 
-## Ask for outputs
+<img src="assets/outputs.svg" alt="Six things you can ask for" width="100%">
 
-After the snapshot, ask for any of these. If the chat has no run yet, Claude runs the research first.
+Every claim traces back to something the research found, or to a named, dated source. If your profile is missing a detail, Claude leaves that claim out.
 
-- **Pre-call brief.** "Write a pre-call brief." One page of findings in plain language and the offering that fits.
-- **Slide deck.** "Make a deck." Attach your brand .pptx in the chat if you want it on your template. It isn't stored.
-- **Outbound drafts.** "Draft an email and a LinkedIn message." Short options grounded in what the run found.
-- **Technical detail.** "Give me the technical detail." A readable summary of what the research saw on the company's websites and servers, with the evidence, for sales engineers.
-- **Scope and proposal outline.** "Size this and outline a proposal." Sizing from the run's counts, built on your offerings and pricing basis.
-- **Buying context.** "Why now?" Signals from your connected tools and web search, each with a named, dated source.
+Nothing is stored between chats. Each run lives in the chat where you made it. In a new chat, ask again.
 
-Every claim about a prospect traces to a finding or to a named, dated source. When your profile lacks a detail, Claude leaves the claim out.
+<details>
+<summary><strong>Research blocked? Send this to your IT team.</strong></summary>
 
-## If your network blocks a run
+<br>
 
-This section is for your IT team. Before each run, Claude checks that it can reach the public sources. If any are blocked, it names them and stops. Ask your IT team to allow HTTPS (port 443) to all of these hosts:
+Before each run, Claude checks that it can reach the public sources. If any are blocked, it names them and stops. Ask your IT team to allow HTTPS (port 443) to these hosts:
 
 ```
 rdap.org
@@ -70,6 +64,6 @@ The web-hygiene check is optional. It needs Java 17 or newer and a one-time down
 
 A 403 or 407 from your network, or a proxy page in place of the real answer, counts as blocked.
 
-## License
+</details>
 
-MIT
+MIT license.

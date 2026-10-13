@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="200" viewBox="0 0 900 200" role="img" aria-label="Three steps: install, set up once, ask in plain words">
+  <style>.t{font-family:Segoe UI,Helvetica,Arial,sans-serif}</style>
+  <g class="t">
+    <rect x="10" y="10" width="270" height="180" rx="16" fill="#eef6f8" stroke="#b9d9df"/>
+    <circle cx="48" cy="48" r="20" fill="#14566b"/><text x="48" y="55" font-size="20" font-weight="700" text-anchor="middle" fill="#fff">1</text>
+    <text x="80" y="55" font-size="22" font-weight="700" fill="#0f2a43">Install</text>
+    <text x="30" y="100" font-size="16" fill="#27465a">Add it to Claude from</text>
+    <text x="30" y="124" font-size="16" fill="#27465a">the plugin settings.</text>
+    <text x="30" y="160" font-size="14" fill="#5b7787">Takes a minute.</text>
+    <path d="M288 100 h22" stroke="#3fb5a9" stroke-width="3" stroke-linecap="round"/><path d="M304 92 l8 8 -8 8" fill="none" stroke="#3fb5a9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="315" y="10" width="270" height="180" rx="16" fill="#eef6f8" stroke="#b9d9df"/>
+    <circle cx="353" cy="48" r="20" fill="#14566b"/><text x="353" y="55" font-size="20" font-weight="700" text-anchor="middle" fill="#fff">2</text>
+    <text x="385" y="55" font-size="22" font-weight="700" fill="#0f2a43">Set up once</text>
+    <text x="335" y="100" font-size="16" fill="#27465a">Share your firm's website.</text>
+    <text x="335" y="124" font-size="16" fill="#27465a">Claude drafts your profile.</text>
+    <text x="335" y="160" font-size="14" fill="#5b7787">You confirm it.</text>
+    <path d="M593 100 h22" stroke="#3fb5a9" stroke-width="3" stroke-linecap="round"/><path d="M609 92 l8 8 -8 8" fill="none" stroke="#3fb5a9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="620" y="10" width="270" height="180" rx="16" fill="#14566b"/>
+    <circle cx="658" cy="48" r="20" fill="#fff"/><text x="658" y="55" font-size="20" font-weight="700" text-anchor="middle" fill="#14566b">3</text>
+    <text x="690" y="55" font-size="22" font-weight="700" fill="#fff">Just ask</text>
+    <text x="640" y="100" font-size="16" fill="#e3f3f6">Say who you're meeting.</text>
+    <text x="640" y="124" font-size="16" fill="#e3f3f6">No commands to learn.</text>
+    <text x="640" y="160" font-size="14" fill="#b6dce3">That's it.</text>
+  </g>
+</svg>

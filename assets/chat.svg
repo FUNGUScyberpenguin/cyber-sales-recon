@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="470" viewBox="0 0 900 470" role="img" aria-label="Example chat: a salesperson asks to be ready for a call with acme.com and gets a short snapshot with next steps">
+  <style>.t{font-family:Segoe UI,Helvetica,Arial,sans-serif}</style>
+  <g class="t">
+    <rect x="10" y="10" width="880" height="450" rx="18" fill="#f7f9fa" stroke="#d5dde1"/>
+    <rect x="300" y="34" width="570" height="62" rx="16" fill="#14566b"/>
+    <text x="324" y="60" font-size="17" fill="#fff">I'm meeting with acme.com and I need to be</text>
+    <text x="324" y="83" font-size="17" fill="#fff">ready for the call.</text>
+    <text x="34" y="132" font-size="15" fill="#5b7787">Researching acme.com now.</text>
+    <rect x="30" y="148" width="650" height="196" rx="16" fill="#ffffff" stroke="#d5dde1"/>
+    <text x="54" y="180" font-size="15" font-weight="700" fill="#0f2a43" letter-spacing="1">SNAPSHOT (EXAMPLE)</text>
+    <text x="54" y="212" font-size="17" fill="#27465a">34 hostnames found, 21 of them live.</text>
+    <text x="54" y="240" font-size="17" fill="#27465a">3 findings worth a look, in plain language.</text>
+    <text x="54" y="268" font-size="17" fill="#27465a">Best fit from your offerings, with the reasons.</text>
+    <text x="54" y="304" font-size="15" fill="#8a5a00">Not checked: one data source was unavailable.</text>
+    <text x="54" y="326" font-size="15" fill="#5b7787">A source that fails is never turned into a finding.</text>
+    <text x="34" y="378" font-size="17" fill="#0f2a43">What would help most?</text>
+    <rect x="30" y="394" width="190" height="42" rx="21" fill="#eef6f8" stroke="#14566b"/><text x="125" y="420" font-size="15" text-anchor="middle" fill="#14566b">A pre-call brief</text>
+    <rect x="232" y="394" width="190" height="42" rx="21" fill="#eef6f8" stroke="#14566b"/><text x="327" y="420" font-size="15" text-anchor="middle" fill="#14566b">The technical detail</text>
+    <rect x="434" y="394" width="190" height="42" rx="21" fill="#eef6f8" stroke="#14566b"/><text x="529" y="420" font-size="15" text-anchor="middle" fill="#14566b">Why now?</text>
+  </g>
+</svg>

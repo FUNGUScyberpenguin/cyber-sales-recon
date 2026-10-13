@@ -154,3 +154,17 @@ def test_a_plain_meeting_request_reaches_recon_and_every_skill_keeps_internals_o
     for d in skills.iterdir():
         if d.name != "python-check":
             assert "never show commands, file paths, tool names, or error traces" in (d / "SKILL.md").read_text().lower(), d.name
+
+
+def test_readme_pictures_exist_and_the_readme_is_plain():
+    import re
+    from pathlib import Path
+
+    root = Path(__file__).resolve().parents[1]
+    readme = (root / "README.md").read_text()
+    pictures = re.findall(r'src="(assets/[^"]+)"', readme)
+    assert len(pictures) >= 4
+    for pic in pictures:
+        assert (root / pic).exists(), pic
+    assert "—" not in readme
+    assert not re.search("[\U0001F300-\U0001FAFF☀-➿]", readme)

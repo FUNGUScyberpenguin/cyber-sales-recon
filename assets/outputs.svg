@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="330" viewBox="0 0 900 330" role="img" aria-label="Six things you can ask for">
+  <style>.t{font-family:Segoe UI,Helvetica,Arial,sans-serif}.h{font-size:19px;font-weight:700;fill:#0f2a43}.b{font-size:15px;fill:#27465a}</style>
+  <g class="t">
+    <rect x="10" y="10" width="280" height="145" rx="14" fill="#eef6f8" stroke="#b9d9df"/><text class="h" x="30" y="46">Pre-call brief</text><text class="b" x="30" y="76">One page. What we found and</text><text class="b" x="30" y="98">the offering that fits.</text>
+    <rect x="310" y="10" width="280" height="145" rx="14" fill="#eef6f8" stroke="#b9d9df"/><text class="h" x="330" y="46">Slide deck</text><text class="b" x="330" y="76">A .pptx. Attach your brand</text><text class="b" x="330" y="98">template to use it.</text>
+    <rect x="610" y="10" width="280" height="145" rx="14" fill="#eef6f8" stroke="#b9d9df"/><text class="h" x="630" y="46">Outbound drafts</text><text class="b" x="630" y="76">Short email and LinkedIn</text><text class="b" x="630" y="98">options.</text>
+    <rect x="10" y="175" width="280" height="145" rx="14" fill="#eef6f8" stroke="#b9d9df"/><text class="h" x="30" y="211">Technical detail</text><text class="b" x="30" y="241">For your sales engineer, with</text><text class="b" x="30" y="263">the evidence behind it.</text>
+    <rect x="310" y="175" width="280" height="145" rx="14" fill="#eef6f8" stroke="#b9d9df"/><text class="h" x="330" y="211">Scope and proposal</text><text class="b" x="330" y="241">Sizing and an outline built on</text><text class="b" x="330" y="263">your offerings.</text>
+    <rect x="610" y="175" width="280" height="145" rx="14" fill="#eef6f8" stroke="#b9d9df"/><text class="h" x="630" y="211">Buying context</text><text class="b" x="630" y="241">Why now, each signal with a</text><text class="b" x="630" y="263">named, dated source.</text>
+  </g>
+</svg>
