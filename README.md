@@ -6,15 +6,65 @@ Tell Claude who you're meeting. It researches the company from public informatio
 
 ## Install
 
-1. In the Claude app, open **Settings**, then **Plugins**.
-2. Add the marketplace `FUNGUScyberpenguin/cyber-sales-recon`.
-3. Install **opportunity-recon**.
+About five minutes, and you only do it once. Every picture has that step's click circled in yellow.
 
-Use it inside a Claude Project. Your firm profile and your habits stay with your work there.
+### Part 1: Add the plugin
 
-## Set up once
+**1. Open Settings.** Click your name at the bottom left of Claude, then **Settings**.
 
-Your first request starts setup. Give Claude your firm's website. It drafts your profile, you fix anything that's off, and it remembers. Paste the backup text it prints into your Project instructions.
+<img src="assets/install/01-settings.png" alt="The menu that opens from your name, with Settings circled" width="420">
+
+**2. Click Plugins** in the list on the left.
+
+<img src="assets/install/02-plugins.png" alt="The Settings window with Plugins circled in the left list" width="100%">
+
+**3. Click Add, then Add marketplace.**
+
+<img src="assets/install/03-add-marketplace.png" alt="The Add menu open with Add marketplace circled" width="100%">
+
+**4. Choose Add from a repository.**
+
+<img src="assets/install/04-from-repository.png" alt="The Add marketplace window with Add from a repository circled" width="100%">
+
+**5. Paste this address and click Sync.**
+
+```
+https://github.com/FUNGUScyberpenguin/cyber-sales-recon
+```
+
+Claude shows a red warning that marketplace plugins aren't checked by Anthropic. You can read everything it does at that address.
+
+<img src="assets/install/05-paste-sync.png" alt="The address pasted into the URL box with Sync circled" width="100%">
+
+**6. Turn it on.** Scroll to **From marketplaces you added**, open **Opportunity Recon**, and make sure the switch is on.
+
+<img src="assets/install/06-switch-on.png" alt="The Opportunity Recon page with its switch circled" width="100%">
+
+### Part 2: Make a Project
+
+A Project is where Claude keeps your firm profile, so you only set up once.
+
+**7. Click Projects** in the left sidebar.
+
+<img src="assets/install/07-projects.png" alt="The sidebar with Projects circled" width="260">
+
+**8. Click New project.**
+
+<img src="assets/install/08-new-project.png" alt="The Projects page with New project circled" width="100%">
+
+**9. Name it and click Create project.** Any name works. "Sales Tool" is fine.
+
+<img src="assets/install/09-name-project.png" alt="The Create a project window with the name box and Create project circled" width="420">
+
+### Part 3: Tell Claude who you're meeting
+
+**10. Click the box that says "New session"** and type who you're meeting, for example: *I'm meeting with acme.com and I need to be ready for the call.* The first time, Claude asks for your firm's website and drafts your profile. Fix anything that's off and say yes.
+
+<img src="assets/install/10-project-page.png" alt="The project page with the New session box circled" width="100%">
+
+**11. Save the backup.** At the end of setup, Claude prints a block of text. Click **Add** next to **Instructions** on the right and paste it there. If Claude ever forgets your profile, this brings it back.
+
+<img src="assets/install/11-instructions.png" alt="The project page with Add next to Instructions circled" width="100%">
 
 ## Then just ask
 
@@ -30,7 +80,7 @@ You don't need commands. If you only know the company's name, Claude asks for it
 
 Every claim traces back to something the research found, or to a named, dated source. If your profile is missing a detail, Claude leaves that claim out.
 
-Nothing is stored between chats. Each run lives in the chat where you made it. In a new chat, ask again.
+Your profile is kept. Research runs aren't: each one lives in the chat where you made it. In a new chat, ask again.
 
 <details>
 <summary><strong>If Claude says research is blocked</strong></summary>
