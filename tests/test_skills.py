@@ -129,3 +129,12 @@ def test_setup_asks_pricing_before_the_draft_so_the_user_approves_everything_sav
 def test_the_backup_hides_lens_names_and_recon_can_map_without_them():
     assert "lens names removed" in SETUP
     assert "backup" in RECON and "silently" in RECON
+
+
+def test_readme_lists_every_core_host():
+    from pathlib import Path
+    from reconbrief.preflight import CORE_HOSTS
+
+    readme = (Path(__file__).resolve().parents[1] / "README.md").read_text()
+    missing = [h for h in CORE_HOSTS if h not in readme]
+    assert not missing, f"README is missing core hosts: {missing}"
