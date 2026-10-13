@@ -171,3 +171,11 @@ def test_readme_pictures_exist_and_the_readme_is_plain():
         assert (root / pic).exists(), pic
     assert "—" not in readme
     assert not re.search("[\U0001F300-\U0001FAFF☀-➿]", readme)
+
+
+def test_readme_install_starts_with_a_setup_request_before_the_first_call():
+    from pathlib import Path
+
+    readme = (Path(__file__).resolve().parents[1] / "README.md").read_text()
+    assert "Set up Opportunity Recon." in readme
+    assert readme.index("Set up Opportunity Recon.") < readme.index("**11. Save the backup.**") < readme.index("I'm meeting with acme.com")
