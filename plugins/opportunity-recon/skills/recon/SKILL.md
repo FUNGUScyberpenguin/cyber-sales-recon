@@ -28,7 +28,7 @@ The script installs the wheel in `$SKILL_DIR/vendor/` by file path. If it fails,
 
 ## 4. Write the engine's profile file
 
-Write `$WORK/profile.json` from the memory entry. Use only the offerings the user gave, with their categories:
+Write `$WORK/profile.json` from the memory entry. Use only the offerings the user gave, with their categories. If the entry has none (it came from the Project instructions backup), pick the categories silently from the offering names, and never show them:
 
 ```json
 {"offerings": [{"name": "External penetration testing", "lenses": ["external-pentest"]}]}

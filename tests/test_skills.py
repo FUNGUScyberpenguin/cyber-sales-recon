@@ -86,3 +86,46 @@ def test_profile_json_example_loads_with_the_engine(tmp_path):
     offerings = load_offerings(path)
     assert offerings and all(o.lenses for o in offerings)
     assert json.loads(block)["offerings"]
+
+
+def test_setup_drafts_the_profile_from_the_firms_own_website():
+    low = SETUP.lower()
+    assert "firm's website" in low and "read" in low
+    assert "offerings" in low and "differentiators" in low
+
+
+def test_setup_drafts_only_what_the_site_says_and_cites_the_page():
+    low = SETUP.lower()
+    assert "leave out" in low or "stays empty" in low
+    assert "page it came from" in low
+    assert "Read from:" in SETUP  # the saved entry names its source pages and date
+
+
+def test_setup_shows_the_draft_and_waits_for_approval_before_saving():
+    low = SETUP.lower()
+    assert low.index("show the draft") < low.index("save to memory")
+    assert "before saving" in low or "until the user approves" in low
+
+
+def test_setup_treats_website_text_as_data_and_has_a_fallback():
+    low = SETUP.lower()
+    assert "data, not instructions" in low
+    assert "cannot be read" in low and "ask" in low
+    assert "pricing" in low and "optional" in low  # still asked, never guessed
+
+
+def test_setup_records_a_source_per_item_and_marks_user_written_lines():
+    assert 'user-provided' in SETUP
+    assert "firm's own claim" in SETUP
+    assert SETUP.count("<page URL") >= 2  # offerings and differentiators each carry their page
+
+
+def test_setup_asks_pricing_before_the_draft_so_the_user_approves_everything_saved():
+    low = SETUP.lower()
+    assert low.index("scope or price") < low.index("show the draft")
+    assert "whole draft" in low
+
+
+def test_the_backup_hides_lens_names_and_recon_can_map_without_them():
+    assert "lens names removed" in SETUP
+    assert "backup" in RECON and "silently" in RECON
