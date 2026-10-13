@@ -1,5 +1,7 @@
 <p align="center"><img src="docs/assets/banner.svg" alt="Opportunity Recon: walk into every call knowing the company" width="100%"></p>
 
+<p align="center"><a href="https://funguscyberpenguin.github.io/cyber-sales-recon/"><img src="docs/assets/open-guide.svg" alt="Open the step-by-step guide" width="360"></a></p>
+
 Tell Claude who you're meeting. It researches the company from public information and gets you ready.
 
 <img src="docs/assets/steps.svg" alt="Install, set up once, just ask" width="100%">

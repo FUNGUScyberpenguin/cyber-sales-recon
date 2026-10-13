@@ -197,3 +197,12 @@ def test_the_guide_page_matches_the_readme_and_loads_nothing_from_outside():
     assert "—" not in page
     assert not re.search("[\U0001F300-\U0001FAFF☀-➿]", page)
     assert (root / "docs" / ".nojekyll").exists()
+
+
+def test_readme_opens_with_a_button_to_the_guide_page():
+    from pathlib import Path
+
+    readme = (Path(__file__).resolve().parents[1] / "README.md").read_text()
+    top = readme[:readme.index("Tell Claude who you're meeting")]
+    assert 'href="https://funguscyberpenguin.github.io/cyber-sales-recon/"' in top
+    assert "open-guide.svg" in top
