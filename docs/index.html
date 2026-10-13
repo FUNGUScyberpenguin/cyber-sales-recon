@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Opportunity Recon</title>
+<meta name="description" content="Tell Claude who you're meeting. It researches the company from public information and gets you ready for the call.">
+<style>
+:root{
+  --bg:#f5f8f9; --surface:#ffffff; --ink:#0f2a43; --muted:#4d6676; --line:#d5e2e6;
+  --accent:#14566b; --accent-ink:#ffffff; --soft:#eaf4f6; --code:#0f2a43; --code-ink:#e3f3f6; --ring:#ffc42e;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0c161f; --surface:#13222e; --ink:#e8f2f5; --muted:#9db6c2; --line:#25394a;
+    --accent:#5fd0c5; --accent-ink:#082026; --soft:#172c3a; --code:#08121a; --code-ink:#d6eef2;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0c161f; --surface:#13222e; --ink:#e8f2f5; --muted:#9db6c2; --line:#25394a;
+  --accent:#5fd0c5; --accent-ink:#082026; --soft:#172c3a; --code:#08121a; --code-ink:#d6eef2;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 "Segoe UI",system-ui,-apple-system,Helvetica,Arial,sans-serif}
+.wrap{max-width:880px;margin:0 auto;padding:0 16px}
+header.top{padding:24px 0 8px}
+header.top img{display:block;width:100%;height:auto;border-radius:18px}
+.lead{font-size:1.25rem;margin:28px 0 20px;max-width:34em}
+.cta{display:inline-block;background:var(--accent);color:var(--accent-ink);text-decoration:none;font-weight:700;padding:14px 26px;border-radius:999px}
+.cta:hover{filter:brightness(1.08)}
+.cta:focus-visible,a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--ring);outline-offset:3px}
+.sub{color:var(--muted);margin-left:14px;font-size:.95rem}
+.sub a{color:var(--muted)}
+section{margin:56px 0}
+h2{font-size:1.8rem;line-height:1.2;margin:0 0 8px}
+h3{font-size:1.15rem;margin:40px 0 12px;color:var(--accent);text-transform:uppercase;letter-spacing:.06em}
+p{margin:10px 0}
+.hero-steps{display:block;width:100%;height:auto;margin-top:36px}
+.step{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px;margin:18px 0}
+.step h4{display:flex;gap:14px;align-items:center;margin:0 0 6px;font-size:1.15rem}
+.num{flex:none;display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--accent);color:var(--accent-ink);font-weight:700;font-size:1rem}
+.step p{margin:6px 0 14px 48px;color:var(--muted)}
+.step a{display:block}
+.step img{display:block;max-width:100%;height:auto;border-radius:12px;border:1px solid var(--line);margin:14px auto 0}
+.step img.small{max-width:min(300px,100%)}
+.step img.med{max-width:min(460px,100%)}
+.code{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--code);color:var(--code-ink);border-radius:12px;padding:12px 14px 12px 18px;margin:8px 0 6px 48px;font:15px/1.4 ui-monospace,SFMono-Regular,Consolas,monospace}
+.code code{overflow-wrap:anywhere}
+.code button{flex:none;font:inherit;font-family:"Segoe UI",system-ui,sans-serif;font-size:.85rem;font-weight:700;background:var(--accent);color:var(--accent-ink);border:0;border-radius:999px;padding:6px 14px;cursor:pointer}
+.note{background:var(--soft);border-radius:12px;padding:12px 16px;margin:10px 0 0 48px;color:var(--muted);font-size:.97rem}
+figure{margin:24px 0}
+figure img{display:block;width:100%;height:auto}
+details{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 18px}
+summary{cursor:pointer;font-weight:700}
+footer{margin:64px 0 40px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:.93rem}
+footer a{color:var(--muted)}
+@media (max-width:560px){
+  body{font-size:16px}
+  .step{padding:16px}
+  .step p,.code,.note{margin-left:0}
+  .sub{display:block;margin:12px 0 0}
+}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <img src="assets/banner.svg" alt="Opportunity Recon: walk into every call knowing the company" width="900" height="220">
+  <p class="lead">Tell Claude who you're meeting. It researches the company from public information and gets you ready.</p>
+  <a class="cta" href="#install">Start the install</a>
+  <span class="sub">Free and open source. <a href="https://github.com/FUNGUScyberpenguin/cyber-sales-recon">See the code</a></span>
+  <img class="hero-steps" src="assets/steps.svg" alt="Three steps: install, set up once, just ask" width="900" height="200">
+</header>
+
+<main>
+<section id="install">
+  <h2>Install</h2>
+  <p>About five minutes, and you only do it once. Every picture has that step's click circled in yellow.</p>
+
+  <h3>Part 1: Add the plugin</h3>
+
+  <div class="step"><h4><span class="num">1</span>Open Settings</h4>
+    <p>Click your name at the bottom left of Claude, then <strong>Settings</strong>.</p>
+    <a href="assets/install/01-settings.png" target="_blank" rel="noopener"><img class="med" src="assets/install/01-settings.png" alt="The menu that opens from your name, with Settings circled" width="535" height="451" loading="lazy"></a></div>
+
+  <div class="step"><h4><span class="num">2</span>Click Plugins</h4>
+    <p>It's in the list on the left.</p>
+    <a href="assets/install/02-plugins.png" target="_blank" rel="noopener"><img src="assets/install/02-plugins.png" alt="The Settings window with Plugins circled in the left list" width="1000" height="692" loading="lazy"></a></div>
+
+  <div class="step"><h4><span class="num">3</span>Click Add, then Add marketplace</h4>
+    <a href="assets/install/03-add-marketplace.png" target="_blank" rel="noopener"><img src="assets/install/03-add-marketplace.png" alt="The Add menu open with Add marketplace circled" width="1000" height="692" loading="lazy"></a></div>
+
+  <div class="step"><h4><span class="num">4</span>Choose Add from a repository</h4>
+    <a href="assets/install/04-from-repository.png" target="_blank" rel="noopener"><img src="assets/install/04-from-repository.png" alt="The Add marketplace window with Add from a repository circled" width="1000" height="688" loading="lazy"></a></div>
+
+  <div class="step"><h4><span class="num">5</span>Paste this address and click Sync</h4>
+    <div class="code"><code>https://github.com/FUNGUScyberpenguin/cyber-sales-recon</code><button type="button" aria-label="Copy the address" data-copy="https://github.com/FUNGUScyberpenguin/cyber-sales-recon">Copy</button></div>
+    <p class="note">Claude shows a red warning that marketplace plugins aren't checked by Anthropic. You can read everything this one does at that address.</p>
+    <a href="assets/install/05-paste-sync.png" target="_blank" rel="noopener"><img src="assets/install/05-paste-sync.png" alt="The address pasted into the URL box with Sync circled" width="1000" height="692" loading="lazy"></a></div>
+
+  <div class="step"><h4><span class="num">6</span>Turn it on</h4>
+    <p>Scroll to <strong>From marketplaces you added</strong>, open <strong>Opportunity Recon</strong>, and make sure the switch is on.</p>
+    <a href="assets/install/06-switch-on.png" target="_blank" rel="noopener"><img src="assets/install/06-switch-on.png" alt="The Opportunity Recon page with its switch circled" width="1000" height="713" loading="lazy"></a></div>
+
+  <h3>Part 2: Make a Project</h3>
+  <p>A Project is where Claude keeps your firm profile, so you only set up once.</p>
+
+  <div class="step"><h4><span class="num">7</span>Click Projects</h4>
+    <p>It's in the left sidebar.</p>
+    <a href="assets/install/07-projects.png" target="_blank" rel="noopener"><img class="small" src="assets/install/07-projects.png" alt="The sidebar with Projects circled" width="277" height="280" loading="lazy"></a></div>
+
+  <div class="step"><h4><span class="num">8</span>Click New project</h4>
+    <a href="assets/install/08-new-project.png" target="_blank" rel="noopener"><img src="assets/install/08-new-project.png" alt="The Projects page with New project circled" width="1000" height="90" loading="lazy"></a></div>
+
+  <div class="step"><h4><span class="num">9</span>Name it and click Create project</h4>
+    <p>Any name works. "Sales Tool" is fine.</p>
+    <a href="assets/install/09-name-project.png" target="_blank" rel="noopener"><img class="med" src="assets/install/09-name-project.png" alt="The Create a project window with the name box and Create project circled" width="523" height="424" loading="lazy"></a></div>
+
+  <h3>Part 3: Set it up</h3>
+
+  <div class="step"><h4><span class="num">10</span>Start setup</h4>
+    <p>Click the box that says "New session" and type:</p>
+    <div class="code"><code>Set up Opportunity Recon</code><button type="button" aria-label="Copy the setup phrase" data-copy="Set up Opportunity Recon">Copy</button></div>
+    <p>Claude asks for your firm's website and a couple of quick questions, then drafts your profile. Fix anything that's off, then say yes.</p>
+    <a href="assets/install/10-project-page.png" target="_blank" rel="noopener"><img src="assets/install/10-project-page.png" alt="The New session box with Set up Opportunity Recon typed in it" width="819" height="213" loading="lazy"></a></div>
+
+  <div class="step"><h4><span class="num">11</span>Save the backup</h4>
+    <p>When setup finishes, Claude prints a block of text. Click <strong>Add</strong> next to <strong>Instructions</strong> on the right and paste it there. If Claude ever forgets your profile, this brings it back.</p>
+    <a href="assets/install/11-instructions.png" target="_blank" rel="noopener"><img src="assets/install/11-instructions.png" alt="The project page with Add next to Instructions circled" width="1000" height="302" loading="lazy"></a></div>
+
+  <div class="step"><h4><span class="num">12</span>Ask for your first call</h4>
+    <p>Type who you're meeting, for example:</p>
+    <div class="code"><code>I'm meeting with acme.com and I need to be ready for the call.</code><button type="button" aria-label="Copy the example sentence" data-copy="I'm meeting with acme.com and I need to be ready for the call.">Copy</button></div></div>
+</section>
+
+<section>
+  <h2>Then just ask</h2>
+  <p>Talk the way you would to a coworker. Say who you're meeting. You don't need commands. If you only know the company's name, Claude asks for its website.</p>
+  <figure><img src="assets/chat.svg" alt="Example chat: a salesperson asks to be ready for a call with acme.com and gets a short snapshot with next steps" width="900" height="470" loading="lazy"></figure>
+</section>
+
+<section>
+  <h2>What you can ask for</h2>
+  <figure><img src="assets/outputs.svg" alt="Six things you can ask for: pre-call brief, slide deck, outbound drafts, technical detail, scope and proposal, buying context" width="900" height="330" loading="lazy"></figure>
+  <p>Every claim traces back to something the research found, or to a named, dated source. If your profile is missing a detail, Claude leaves that claim out.</p>
+  <p>Your profile is kept. Research runs aren't: each one lives in the chat where you made it. In a new chat, ask again.</p>
+</section>
+
+<section>
+  <details>
+    <summary>If Claude says research is blocked</summary>
+    <p>Your network or workspace is stopping Claude from reaching the public sources. Ask Claude: "Write a note for my IT team about what to allow." It knows what was blocked and, where it can tell, where it's running, so the note names the right hosts and the right setting. Send that note to IT.</p>
+  </details>
+</section>
+</main>
+
+<footer>MIT license. <a href="https://github.com/FUNGUScyberpenguin/cyber-sales-recon">Source on GitHub</a>.</footer>
+</div>
+<script>
+document.querySelectorAll("button[data-copy]").forEach(function(b){
+  b.addEventListener("click",function(){
+    var text=b.getAttribute("data-copy");
+    var old=b.textContent;
+    function say(msg){b.textContent=msg;setTimeout(function(){b.textContent=old},1500)}
+    try{
+      if(navigator.clipboard&&navigator.clipboard.writeText){
+        navigator.clipboard.writeText(text).then(function(){say("Copied")},function(){say("Select and copy")});
+      }else{say("Select and copy")}
+    }catch(e){say("Select and copy")}
+  });
+});
+</script>
+</body>
+</html>

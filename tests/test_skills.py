@@ -165,7 +165,7 @@ def test_readme_pictures_exist_and_the_readme_is_plain():
 
     root = Path(__file__).resolve().parents[1]
     readme = (root / "README.md").read_text()
-    pictures = re.findall(r'src="(assets/[^"]+)"', readme)
+    pictures = re.findall(r'src="(docs/assets/[^"]+)"', readme)
     assert len(pictures) >= 4
     for pic in pictures:
         assert (root / pic).exists(), pic
@@ -179,3 +179,21 @@ def test_readme_install_starts_with_a_setup_request_before_the_first_call():
     readme = (Path(__file__).resolve().parents[1] / "README.md").read_text()
     assert "Set up Opportunity Recon" in readme
     assert readme.index("Set up Opportunity Recon") < readme.index("**11. Save the backup.**") < readme.index("I'm meeting with acme.com")
+
+
+def test_the_guide_page_matches_the_readme_and_loads_nothing_from_outside():
+    import re
+    from pathlib import Path
+
+    root = Path(__file__).resolve().parents[1]
+    page = (root / "docs" / "index.html").read_text()
+    readme = (root / "README.md").read_text()
+    assert "https://github.com/FUNGUScyberpenguin/cyber-sales-recon" in page
+    for phrase in ("Set up Opportunity Recon", "I'm meeting with acme.com", "note for my IT team"):
+        assert phrase in page and phrase in readme, phrase
+    for src in re.findall(r'src="(assets/[^"]+)"', page):
+        assert (root / "docs" / src).exists(), src
+    assert not re.search(r"<script[^>]+src=|<link[^>]+href=\"http|@import", page)
+    assert "—" not in page
+    assert not re.search("[\U0001F300-\U0001FAFF☀-➿]", page)
+    assert (root / "docs" / ".nojekyll").exists()
